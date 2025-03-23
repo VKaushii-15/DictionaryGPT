@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DictionaryGPT</title>
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://kit.fontawesome.com/0f2c0a5a7e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="side.js"></script>
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="left-nav">
+        <button class="nav-link" id="History">
+          <img src="./assets/History.svg" alt="" />
+        </button>
+      </div>
+      <div class="right-nav">
+        <button class="nav-link" id="Drop-Down">
+          <img src="./assets/Drop-Down.svg" alt="" />
+        </button>
+        <button class="nav-link" id="Minus">
+          <img src="./assets/minus.svg" alt="" />
+        </button>
+        <button class="nav-link" id="Close">
+          <img src="./assets/close.svg" alt="" />
+        </button>
+      </div>
+    </nav>
+    <div class="BodyText">
+      <h1>DictionaryGPT</h1>
+      <p>What can I help you with today?</p>
+    </div>
+    <div class="search-bar">
+      <span class="search-icon"><img src="./assets/search.svg" alt="" /></span>
+      <form id="WordSearch" method="POST">
+        <input
+          type="text"
+          id="Word"
+          name="Word"
+          placeholder="Search for a word"
+        />
+      </form>
+    </div>
+
+    <div class="search-result">
+      <div class="border"></div>
+    </div>
+  </body>
+</html>

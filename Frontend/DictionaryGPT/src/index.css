@@ -1,0 +1,157 @@
+h1 {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 266px;
+  height: 44px;
+  flex-shrink: 0;
+  position: relative;
+  top: 104px;
+  left: 117px;
+  right: 117px;
+  bottom: 352px;
+}
+
+body {
+  -webkit-app-region: drag;
+  background-image: url("./assets/BG_2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Navigation */
+
+nav {
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 500px;
+  height: 50px;
+  justify-content: space-between;
+  background: #fff;
+}
+
+button {
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #918f8f;
+}
+
+button img {
+  width: 24px;
+  height: 24px;
+}
+
+.history-popup {
+  display: flex;
+  width: 184px;
+  height: 500px;
+  padding: 0px 136px 466px 14px;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* tagline */
+p {
+  position: relative;
+  top: 125px;
+  left: 87px;
+  right: 68px;
+  width: 344px;
+  height: 23px;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+/* search bar */
+
+.search-bar {
+  position: fixed;
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 220px;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  top: 311px;
+  bottom: 147px;
+  left: 68px;
+  right: 68px;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes moveSearchBar {
+  from {
+    top: 311px;
+  }
+  to {
+    top: 66px;
+  }
+}
+
+.search-bar.moved {
+  animation: moveSearchBar 0.3s forwards;
+  transform: scale(0.8);
+}
+
+.search-bar input {
+  position: absolute;
+  bottom: 10px;
+  right: 31px;
+  width: 300px;
+  height: 19px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 500;
+  color: #fff;
+  background: transparent;
+}
+
+.search-icon {
+  position: absolute;
+  display: flex;
+  justify-content: right;
+  bottom: 8px;
+  left: 325px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Page 2 */
+
+/* Border */
+.border {
+  top: 125px;
+  left: 50px;
+  right: 50px;
+  bottom: 25px;
+  width: 400px;
+  height: 350px;
+  border-radius: 15px;
+  border: 1px solid #fff;
+}
