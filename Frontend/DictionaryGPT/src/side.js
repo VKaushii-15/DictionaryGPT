@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const Drop = document.getElementById("Drop-Down");
   const History = document.getElementById("History");
   const form = document.getElementById("WordSearch");
-  const Body = document.getElementById("BodyText");
-  const searchBar = document.getElementById("search-bar");
+  const Body = document.querySelector(".BodyText");
+  const searchBar=document.querySelector(".search-bar");
 
   Close.addEventListener("click", () => {
     ipc.send("close");
@@ -30,7 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const formdata = new FormData(form);
     const word = formdata.get("Word");
+    Body.classList.add("passive");
+    searchBar.classList.add(".lift");
     ipc.send("Searched", word);
-    searchBar.classList.add("moved");
+
   });
+  
 });
+
