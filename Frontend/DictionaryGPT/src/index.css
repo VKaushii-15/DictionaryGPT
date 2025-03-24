@@ -91,18 +91,19 @@ p {
   display: inline-flex;
   position: fixed;
   top: 311px;
-  left : 68px;
+  left: 68px;
   right: 68px;
   bottom: 147px;
   gap: 228px;
   border-radius: 25px;
-  border: 2px solid #FFF;
-} 
+  border: 2px solid #fff;
+}
 
 #Word {
+  font-family: Montserrat;
   margin: auto;
   right: 225px;
-  top : 10px;
+  top: 10px;
   width: 300px;
   height: 19px;
   border: none;
@@ -112,25 +113,21 @@ p {
   position: relative;
 }
 
-.search-bar .search-icon{
+.search-bar .search-icon {
   margin: auto;
   width: 24px;
   height: 24px;
   position: relative;
-  left:320px;
+  left: 320px;
   top: 0px;
 }
-
 
 /* Page 2 */
 
 /* Border */
-.border{
-  visibility: hidden;
-}
-.border .active {
+.border {
   visibility: visible;
-  position: relative;
+  position: absolute;
   top: 125px;
   left: 50px;
   right: 50px;
@@ -140,11 +137,63 @@ p {
   border-radius: 15px;
   border: 1px solid #fff;
 }
-.BodyText{
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.moved {
+  top: 66px;
+  bottom: 392px;
+  transition: all 0.5s ease-out;
+}
+.BodyText {
   visibility: visible;
 }
 
- .passive{
+.passive {
   visibility: hidden;
 }
 
+#WORD {
+  position: relative;
+  top: 41px;
+  bottom: 265px;
+  left: 20px;
+  right: 170px;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#pronunciation {
+  position: relative;
+  top: 102px;
+  bottom: 225px;
+  left: 23px;
+  right: 262px;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const History = document.getElementById("History");
   const form = document.getElementById("WordSearch");
   const Body = document.querySelector(".BodyText");
-  const searchBar=document.querySelector(".search-bar");
+  const searchBar = document.querySelector(".search-bar");
+  const Border = document.querySelector(".border");
 
   Close.addEventListener("click", () => {
     ipc.send("close");
@@ -31,10 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const formdata = new FormData(form);
     const word = formdata.get("Word");
     Body.classList.add("passive");
-    searchBar.classList.add(".lift");
+    Border.classList.remove("passive");
+    Border.classList.add("fade-in");
+    searchBar.classList.add("moved");
     ipc.send("Searched", word);
-
   });
-  
 });
-
