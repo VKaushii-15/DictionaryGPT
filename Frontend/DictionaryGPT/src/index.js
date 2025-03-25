@@ -85,29 +85,5 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
-const ans = async (req) => {
-  try {
-    // Ensure `req` is defined and valid
-    if (!req) {
-      throw new Error("Invalid or missing 'req' value");
-    }
 
-    // Construct the URL
-    const url = `http://localhost:5500/user/${req}`;
-    console.log("Request URL:", url); // Debug the URL
-
-    // Send the GET request
-    const response = await axios.get(url);
-    console.log("Response:", response.data);
-    return response.data;
-  } catch (error) {
-    console.error(
-      "Error:",
-      error.response ? error.response.data : error.message
-    );
-    throw error;
-  }
-};
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.
+// the export HTML tag part

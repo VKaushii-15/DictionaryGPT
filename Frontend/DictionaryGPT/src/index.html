@@ -9,7 +9,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="side.js"></script>
-    <script defer src="index.js"></script>
+    <script src="index.js"></script>
   </head>
   <body>
     <nav>
@@ -49,25 +49,23 @@
     <!-- page 2 -->
 
     <div class="border passive">
-      <h1 class="word" id="word"></h1>
-
+      <div class="word" id="word">
+        <span class="word" id="word">THE WORD</span>
+      </div>
       <div class="pronunciation">
-        <span class="pronunciation-label">Pronunciation:</span>
-        <span class="split-up" id="pronunciation_splitup"></span>
+        <!-- <span class="pronunciation-label"></span> -->
+        <span class="split-up" id="pronunciation">Split-up</span>
       </div>
-
       <div class="etymology">
-        <h3>Etymology</h3>
-        <p id="root_of_the_word"></p>
+        <span class="root" id="root">Root</span>
       </div>
-
-      <div class="section synonyms">
-        <h3>Synonyms</h3>
-        <ul class="synonym-list" id="synonyms"></ul>
+      <div class="synonyms">
+        <ul class="synonym-list" id="synonyms">
+          Synonyms:
+        </ul>
       </div>
-
-      <div class="section meanings">
-        <h3>Meanings</h3>
+      <div class="meanings">
+        <span id="POS">Meaning:</span>
         <div id="meaning"></div>
       </div>
     </div>
