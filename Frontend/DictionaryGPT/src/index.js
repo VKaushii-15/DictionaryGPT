@@ -9,8 +9,8 @@ if (require("electron-squirrel-startup")) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 500,
-    height: 500,
+    width: 700,
+    height: 700,
     frame: false,
     webPreferences: {
       preload: path.join(__dirname, "side.js"),
@@ -48,13 +48,14 @@ const createWindow = () => {
     console.log("History");
   });
 
-  ipcMain.on("Searched", async (_event, word) => {
+  ipcMain.on("Searched", async (event, word) => {
     try {
       const data = await axios.post("http://localhost:5500/user", {
         word: word,
       });
       const output = JSON.stringify(data.data);
       console.log(JSON.parse(output));
+      event.reply("output", returnDefinition(JSON.parse(output)));
     } catch (error) {
       console.error(error);
       alert("Error");
@@ -87,3 +88,47 @@ app.on("window-all-closed", () => {
 });
 
 // the export HTML tag part
+
+function returnDefinition(data) {
+  const word = data.word;
+  const pronunciation = data.pronunciation;
+  const splitup = data.splitup;
+  const root = data.root;
+  const synonyms = data.synonyms;
+  const meaning = data.meaning;
+
+  let html = `
+      <div class="word" id="word">
+        <span class="word" id="word">${word}</span>
+      </div>
+      <div class="pronunciation">
+        <span id="pronunciation">Pronunciation: ${pronunciation}</span>
+      </div>
+      <div class="split-up"> 
+        <span class="split-up" id="split">Split-up: ${splitup}</span>
+      </div>
+      <div class="root">
+        <span class="root" id="root">Root: ${root}</span>
+      </div>
+      <div class="synonyms">
+        <ul class="synonym-list" id="synonyms">
+          Synonyms: ${synonyms
+            .map((synonym) => `<li>${synonym}</li>`)
+            .join(",")}
+        </ul>
+      </div>
+      <div class="meaning">
+        <span id="meaning">Meaning:</span>
+        <div id="meaning">
+        <ul id = "meaning">
+          ${Object.entries(meaning)
+            .map(
+              ([partOfSpeech, definition]) =>
+                `<li>${partOfSpeech}: ${definition}</li>`
+            )
+            .join("")}
+        </ul>
+        </div>
+      </div>`;
+  return html;
+}

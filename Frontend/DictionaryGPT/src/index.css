@@ -34,7 +34,7 @@ nav {
   position: absolute;
   display: flex;
   align-items: center;
-  width: 500px;
+  width: 700px;
   height: 50px;
   justify-content: space-between;
   background: #fff;
@@ -89,11 +89,11 @@ p {
 
 .search-bar {
   display: inline-flex;
-  position: fixed;
-  top: 311px;
+  position: relative;
+  height: 40px;
+  top: 250px;
   left: 68px;
   right: 68px;
-  bottom: 147px;
   gap: 228px;
   border-radius: 25px;
   border: 2px solid #fff;
@@ -114,12 +114,14 @@ p {
 }
 
 .search-bar .search-icon {
-  margin: auto;
+  display: flex-end;
+  position: relative;
+  align-items: right;
+  top: 10px;
+  left: 500px;
+  flex-shrink: 0;
   width: 24px;
   height: 24px;
-  position: relative;
-  left: 320px;
-  top: 0px;
 }
 
 /* Page 2 */
@@ -132,8 +134,8 @@ p {
   left: 50px;
   right: 50px;
   bottom: 25px;
-  width: 400px;
-  height: 350px;
+  width: 600px;
+  height: 450px;
   border-radius: 15px;
   border: 1px solid #fff;
 }
@@ -156,8 +158,8 @@ p {
 }
 
 .moved {
-  top: 66px;
-  bottom: 392px;
+  top: -65px;
+  bottom: 675px;
   transition: all 0.5s ease-out;
 }
 .BodyText {
@@ -170,7 +172,7 @@ p {
 
 #word {
   position: relative;
-  top: 15px;
+  top: 5px;
   left: 10px;
   right: 170px;
   flex-shrink: 0;
@@ -184,7 +186,21 @@ p {
 
 #pronunciation {
   position: relative;
-  top: 50px;
+  top: 25px;
+  left: 23px;
+  right: 262px;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#split {
+  position: relative;
+  top: 25px;
   left: 23px;
   right: 262px;
   flex-shrink: 0;
@@ -200,7 +216,7 @@ p {
   position: relative;
   left: 23px;
   right: 262px;
-  top: 75px;
+  top: 25px;
   flex-shrink: 0;
   color: #fff;
   font-family: Montserrat;
@@ -211,6 +227,8 @@ p {
 }
 
 #synonyms > li {
+  display: inline-block;
+  margin: 0 5px;
   position: relative;
   flex-shrink: 0;
   color: #fff;
@@ -223,7 +241,7 @@ p {
 
 #synonyms {
   position: relative;
-  top: 75px;
+  top: 25px;
   right: 20px;
   color: #fff;
   font-family: Montserrat;
@@ -233,8 +251,8 @@ p {
   line-height: normal;
 }
 
-#POS {
-  top: 75px;
+#meaning {
+  top: 25px;
   left: 23px;
   position: relative;
   flex-shrink: 0;
@@ -243,5 +261,18 @@ p {
   font-size: 20px;
   font-style: Bold;
   font-weight: 400;
+  line-height: normal;
+}
+
+#meaning > li {
+  display: inline-block;
+  margin: 0 5px;
+  position: relative;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
   line-height: normal;
 }

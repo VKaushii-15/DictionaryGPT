@@ -21,7 +21,7 @@ async function listen(UserChoice) {
       {
         role: "system",
         content:
-          "Your task is to listen to the User's word , give its pronunciation splitup, Root of the word , 3 Synonyms , and meaning of the word as a verb and noun etc. These should be given in JSON format\n",
+          "Your task is to listen to the User's word , give its pronunciation splitup, Root of the word , 3 Synonyms , and meaning of the word as a verb and noun etc.The keys should be word , pronunciation , splitup , root , synonyms , meaning. These should be given in JSON format\n",
       },
       {
         role: "user",

@@ -31,10 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const formdata = new FormData(form);
     const word = formdata.get("Word");
+    ipc.send("Searched", word);
+  });
+
+  ipc.on("output", (event, data) => {
+    console.log(data);
     Body.classList.add("passive");
     Border.classList.remove("passive");
     Border.classList.add("fade-in");
     searchBar.classList.add("moved");
-    ipc.send("Searched", word);
+    Border.insertAdjacentHTML("afterbegin", data);
   });
 });
