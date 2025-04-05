@@ -124,7 +124,7 @@ function returnDefinition(data) {
           ${Object.entries(meaning)
             .map(
               ([partOfSpeech, definition]) =>
-                `<li>${partOfSpeech}: ${definition}</li>`
+                `<li><span id="POS">${partOfSpeech}</span>: ${definition}</li>`
             )
             .join("")}
         </ul>
