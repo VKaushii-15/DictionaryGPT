@@ -46,6 +46,7 @@ const createWindow = () => {
 
   ipcMain.on("history", () => {
     console.log("History");
+    mainWindow.reload();
   });
 
   ipcMain.on("Searched", async (event, word) => {
@@ -142,7 +143,10 @@ function returnDefinition(data) {
         </div>
       <div class="sentence">
         <span id="sentencetitle">Sentence:</span>
-        <span id="sentence">${data.sentence}</span>
+        <span id="sentence">${data.sentence.replace(
+          new RegExp(`\\b${word}\\b`, "gi"),
+          `<b>${word}</b>`
+        )}</span>
       </div>
       </div>`;
   return html;
