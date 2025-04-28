@@ -61,6 +61,17 @@ const createWindow = () => {
       alert("Error");
     }
   });
+
+  ipcMain.on("Einstein", async (event, word) => {
+    console.log(data);
+    const data = await axios.post("http://localhost:5500/user", {
+      word: word,
+      Einstein: "Yes",
+    });
+    const output = JSON.stringify(data.data);
+    console.log(JSON.parse(output));
+    event.reply("output", returnDefinition(JSON.parse(output)));
+  });
 };
 
 // This method will be called when Electron has finished
@@ -129,6 +140,10 @@ function returnDefinition(data) {
             .join("")}
         </ul>
         </div>
+      <div class="sentence">
+        <span id="sentencetitle">Sentence:</span>
+        <span id="sentence">${data.sentence}</span>
+      </div>
       </div>`;
   return html;
 }

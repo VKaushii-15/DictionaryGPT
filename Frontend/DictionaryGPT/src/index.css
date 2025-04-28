@@ -5,13 +5,28 @@ h1 {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  width: 266px;
+  width: 400px;
   height: 44px;
   flex-shrink: 0;
   position: relative;
   top: 104px;
-  left: 200px;
+  left: 160px;
   bottom: 352px;
+}
+
+.credits-footer {
+  position: absolute;
+  left: 100px;
+  bottom: 75px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
 }
 
 body {
@@ -182,6 +197,33 @@ p {
   line-height: normal;
 }
 
+#sentencetitle {
+  position: relative;
+  top: 25px;
+  left: 23px;
+  right: 250px;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#sentence {
+  position: relative;
+  top: 25px;
+  left: 23px;
+  right: 262px;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+}
 #pronunciation {
   position: relative;
   top: 25px;
@@ -286,4 +328,45 @@ p {
   font-style: Bold;
   font-weight: 800;
   line-height: normal;
+}
+
+.Einstein > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 125px;
+  left: 20px;
+  width: 100px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.Einstein > button:hover {
+  background: #fff;
+  color: #000;
+  transition: all 0.5s ease-out;
+  position: relative;
+}
+
+.Einstein > button:hover::after {
+  content: "Gives the meaning of the word like a 5 yeard old child";
+  position: absolute;
+  top: -50px;
+  left: 100px;
+  width: 150px;
+  padding: 10px;
+  background: #fff;
+  color: #000;
+  border-radius: 5px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }

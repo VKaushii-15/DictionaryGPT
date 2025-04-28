@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const Body = document.querySelector(".BodyText");
   const searchBar = document.querySelector(".search-bar");
   const Border = document.querySelector(".border");
+  const Einstein = document.getElementById("Einstein");
 
   Close.addEventListener("click", () => {
     ipc.send("close");
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formdata = new FormData(form);
     const word = formdata.get("Word");
     ipc.send("Searched", word);
+    location.reload();
   });
 
   ipc.on("output", (event, data) => {
@@ -41,5 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
     Border.classList.add("fade-in");
     searchBar.classList.add("moved");
     Border.insertAdjacentHTML("afterbegin", data);
+  });
+
+  Einstein.addEventListener("click", () => {
+    const formdata = new FormData(form);
+    const word = formdata.get("Word");
+    if (Einstein.checked) {
+      ipc.send("Einstein", word);
+    }
+    console.log("Einstein clicked", word);
   });
 });
