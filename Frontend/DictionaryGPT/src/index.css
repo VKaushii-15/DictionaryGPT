@@ -370,3 +370,81 @@ p {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Drop-Down Popup Styles */
+.drop-popup {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid #fff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  color: #fff;
+  font-family: Montserrat;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+.drop-popup.show {
+  display: block;
+}
+
+.drop-popup h3 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.setting-item {
+  margin-bottom: 15px;
+}
+
+.setting-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.setting-select {
+  width: 100%;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  border-radius: 8px;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.setting-select option {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
