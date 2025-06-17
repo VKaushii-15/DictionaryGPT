@@ -46,8 +46,8 @@ backend.post("/user", async (req, res) => {
   try {
     console.log(`WORD received ${req.body.word}`);
     const word = req.body.word;
-    const Einstein = req.body.Einstein;
-    let Prompt = `You are a JSON-only dictionary API. Given a word, return only a valid JSON object with these keys:
+    const lang = req.body.lang || "English"; // Default to English if no language is provided
+    let Prompt = `You are a JSON-only dictionary API. Given a word in the language : ${lang}, return only a valid JSON object with these keys:
                 - "word": the word itself.
                 - "pronunciation": in readable phonetics.
                 - "splitup": string or array splitting the word.
@@ -61,11 +61,6 @@ backend.post("/user", async (req, res) => {
                   `;
     if (!word) {
       return res.status(400).json({ error: "Word is required" });
-    }
-    if (Einstein === "Yes") {
-      Prompt += `You are Albert Einstein , He always said that 'If your theory is explained to a 5 year old child , 
-                  and they could explain it to another 5 year old child who completed understood it, only then you have a valid theory'
-                  So, you have to explain the word in a way that a 5 year old child can understand it.`;
     }
     const result = await listen(word, Prompt);
     console.log(`WORD received ${word}`);
