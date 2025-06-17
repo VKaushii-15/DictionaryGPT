@@ -27,7 +27,7 @@ async function listen(UserChoice, prompt) {
         content: `${UserChoice}`,
       },
     ],
-    model: "llama-3.3-70b-versatile",
+    model: "llama-3.1-8b-instant",
     temperature: 1,
     max_completion_tokens: 1024,
     top_p: 1,
@@ -47,9 +47,18 @@ backend.post("/user", async (req, res) => {
     console.log(`WORD received ${req.body.word}`);
     const word = req.body.word;
     const Einstein = req.body.Einstein;
-    const Prompt = `Your task is to listen to the User's word , give its pronunciation splitup, Root of the word , 3 Synonyms , and meaning of the word 
-                    as a verb and noun etc.The keys should be word , pronunciation , splitup , root , synonyms , meaning. And use it in a sentence, The word in the sentence should be inside double quotes. 
-                    These should be given in JSON format , the key for the sentence should be 'sentence'\n`;
+    let Prompt = `You are a JSON-only dictionary API. Given a word, return only a valid JSON object with these keys:
+                - "word": the word itself.
+                - "pronunciation": in readable phonetics.
+                - "splitup": string or array splitting the word.
+                - "root": origin of the word (use plain text, no brackets or quotes inside).
+                - "synonyms": an array of 3 related words.
+                - "meaning": an object with keys "noun" and "verb" having definitions.
+                - "sentence": a sentence that uses the word wrapped in escaped double quotes (e.g., \\"example\\").
+
+                Your response must be a valid JSON that can be parsed by \`JSON.parse()\`. Escape all quotes inside strings. Avoid unmatched brackets, parentheses, 
+                or any malformed characters. Do not include explanations, only the JSON object.
+                  `;
     if (!word) {
       return res.status(400).json({ error: "Word is required" });
     }
@@ -63,6 +72,7 @@ backend.post("/user", async (req, res) => {
     console.log(result);
     res.send(result);
   } catch (error) {
+    console.error("Error processing request:", error);
     res.status(500).json({ error: error.message });
   }
 });
