@@ -330,47 +330,6 @@ p {
   line-height: normal;
 }
 
-.Einstein > button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 125px;
-  left: 20px;
-  width: 100px;
-  height: 45px;
-  flex-shrink: 0;
-  border-radius: 15px;
-  border: 1px solid #fff;
-  color: #fff;
-  background: transparent;
-}
-
-.Einstein > button:hover {
-  background: #fff;
-  color: #000;
-  transition: all 0.5s ease-out;
-  position: relative;
-}
-
-.Einstein > button:hover::after {
-  content: "Gives the meaning of the word like a 5 yeard old child";
-  position: absolute;
-  top: -50px;
-  left: 100px;
-  width: 150px;
-  padding: 10px;
-  background: #fff;
-  color: #000;
-  border-radius: 5px;
-  font-family: Montserrat;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -382,60 +341,28 @@ p {
   }
 }
 
-/* Drop-Down Popup Styles */
-.drop-popup {
+#suggestions {
+  list-style: none;
+  margin-top: 4px;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   display: none;
   position: absolute;
-  top: 50px;
-  right: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid #fff;
-  border-radius: 15px;
-  padding: 20px;
-  width: 250px;
-  color: #fff;
-  font-family: Montserrat;
-  z-index: 1000;
-  animation: slideIn 0.3s ease-out;
+  width: 260px;
+  z-index: 10000;
 }
 
-.drop-popup.show {
-  display: block;
-}
-
-.drop-popup h3 {
-  margin: 0 0 15px 0;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.setting-item {
-  margin-bottom: 15px;
-}
-
-.setting-label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.setting-select {
-  width: 100%;
+#suggestions li {
   padding: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid #fff;
-  border-radius: 8px;
-  color: #fff;
-  font-family: Montserrat;
-  font-size: 14px;
   cursor: pointer;
 }
 
-.setting-select option {
-  background: #1a1a1a;
-  color: #fff;
+#suggestions li:hover {
+  background-color: #f0f0f0;
 }
 
 @keyframes slideIn {
