@@ -68,6 +68,6 @@ backend.post("/user", async (req, res) => {
     res.send(result);
   } catch (error) {
     console.error("Error processing request:", error);
-    res.status(500).json({ error: error.message });
+    res.send(error.failed_generation);
   }
 });
