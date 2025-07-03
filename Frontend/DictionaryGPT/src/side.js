@@ -24,7 +24,7 @@ var ipc = ipcRenderer;
 
 // Toggle drop-down popup
 function toggleDropPopup() {
-  const popup = document.getElementById("dropPopup");
+  const popup = document.getElementById("language-popup");
   popup.classList.toggle("show");
 }
 
